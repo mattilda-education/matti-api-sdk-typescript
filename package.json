@@ -1,6 +1,6 @@
 {
   "name": "matti",
-  "version": "0.1.0-alpha.2",
+  "version": "1.0.0",
   "description": "The official TypeScript library for the Matti API",
   "author": "Matti <omar.martinez@mattilda.io>",
   "types": "dist/index.d.ts",
