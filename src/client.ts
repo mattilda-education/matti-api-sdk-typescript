@@ -203,7 +203,7 @@ export interface ClientOptions {
   /**
    * Override the default base URL for the API, e.g., "https://api.example.com/v2/"
    *
-   * Defaults to process.env['MATTIL_BASE_URL'].
+   * Defaults to process.env['MATTI_BASE_URL'].
    */
   baseURL?: string | null | undefined;
 
@@ -257,7 +257,7 @@ export interface ClientOptions {
   /**
    * Set the log level.
    *
-   * Defaults to process.env['MATTIL_LOG'] or 'warn' if it isn't set.
+   * Defaults to process.env['MATTI_LOG'] or 'warn' if it isn't set.
    */
   logLevel?: LogLevel | undefined;
 
@@ -270,9 +270,9 @@ export interface ClientOptions {
 }
 
 /**
- * API Client for interfacing with the Mattil API.
+ * API Client for interfacing with the Matti API.
  */
-export class Mattil {
+export class Matti {
   apiKey: string;
 
   baseURL: string;
@@ -288,11 +288,11 @@ export class Mattil {
   private _options: ClientOptions;
 
   /**
-   * API Client for interfacing with the Mattil API.
+   * API Client for interfacing with the Matti API.
    *
    * @param {string | undefined} [opts.apiKey=process.env['MATTIL_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL=process.env['MATTIL_BASE_URL'] ?? https://api.mattilda.school/matti_api/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['MATTI_BASE_URL'] ?? https://api.mattilda.school/matti_api/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -301,13 +301,13 @@ export class Mattil {
    * @param {Record<string, string | undefined>} opts.defaultQuery - Default query parameters to include with every request to the API.
    */
   constructor({
-    baseURL = readEnv('MATTIL_BASE_URL'),
+    baseURL = readEnv('MATTI_BASE_URL'),
     apiKey = readEnv('MATTIL_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
-      throw new Errors.MattilError(
-        "The MATTIL_API_KEY environment variable is missing or empty; either provide it, or instantiate the Mattil client with an apiKey option, like new Mattil({ apiKey: 'My API Key' }).",
+      throw new Errors.MattiError(
+        "The MATTIL_API_KEY environment variable is missing or empty; either provide it, or instantiate the Matti client with an apiKey option, like new Matti({ apiKey: 'My API Key' }).",
       );
     }
 
@@ -319,20 +319,20 @@ export class Mattil {
     };
 
     if (baseURL && opts.environment) {
-      throw new Errors.MattilError(
-        'Ambiguous URL; The `baseURL` option (or MATTIL_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
+      throw new Errors.MattiError(
+        'Ambiguous URL; The `baseURL` option (or MATTI_BASE_URL env var) and the `environment` option are given. If you want to use the environment you must pass baseURL: null',
       );
     }
 
     this.baseURL = options.baseURL || environments[options.environment || 'production'];
-    this.timeout = options.timeout ?? Mattil.DEFAULT_TIMEOUT /* 1 minute */;
+    this.timeout = options.timeout ?? Matti.DEFAULT_TIMEOUT /* 1 minute */;
     this.logger = options.logger ?? console;
     const defaultLogLevel = 'warn';
     // Set default logLevel early so that we can log a warning in parseLogLevel.
     this.logLevel = defaultLogLevel;
     this.logLevel =
       parseLogLevel(options.logLevel, 'ClientOptions.logLevel', this) ??
-      parseLogLevel(readEnv('MATTIL_LOG'), "process.env['MATTIL_LOG']", this) ??
+      parseLogLevel(readEnv('MATTI_LOG'), "process.env['MATTI_LOG']", this) ??
       defaultLogLevel;
     this.fetchOptions = options.fetchOptions;
     this.maxRetries = options.maxRetries ?? 2;
@@ -396,7 +396,7 @@ export class Mattil {
         if (value === null) {
           return `${encodeURIComponent(key)}=`;
         }
-        throw new Errors.MattilError(
+        throw new Errors.MattiError(
           `Cannot stringify type ${typeof value}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`,
         );
       })
@@ -868,10 +868,10 @@ export class Mattil {
     }
   }
 
-  static Mattil = this;
+  static Matti = this;
   static DEFAULT_TIMEOUT = 60000; // 1 minute
 
-  static MattilError = Errors.MattilError;
+  static MattiError = Errors.MattiError;
   static APIError = Errors.APIError;
   static APIConnectionError = Errors.APIConnectionError;
   static APIConnectionTimeoutError = Errors.APIConnectionTimeoutError;
@@ -902,21 +902,21 @@ export class Mattil {
   users: API.Users = new API.Users(this);
   periods: API.Periods = new API.Periods(this);
 }
-Mattil.Schools = Schools;
-Mattil.Campuses = Campuses;
-Mattil.Programs = Programs;
-Mattil.Inscriptions = Inscriptions;
-Mattil.Memberships = Memberships;
-Mattil.Complements = Complements;
-Mattil.Scholarships = Scholarships;
-Mattil.Discounts = Discounts;
-Mattil.Invoices = Invoices;
-Mattil.Payments = Payments;
-Mattil.Ledger = Ledger;
-Mattil.Students = Students;
-Mattil.Users = Users;
-Mattil.Periods = Periods;
-export declare namespace Mattil {
+Matti.Schools = Schools;
+Matti.Campuses = Campuses;
+Matti.Programs = Programs;
+Matti.Inscriptions = Inscriptions;
+Matti.Memberships = Memberships;
+Matti.Complements = Complements;
+Matti.Scholarships = Scholarships;
+Matti.Discounts = Discounts;
+Matti.Invoices = Invoices;
+Matti.Payments = Payments;
+Matti.Ledger = Ledger;
+Matti.Students = Students;
+Matti.Users = Users;
+Matti.Periods = Periods;
+export declare namespace Matti {
   export type RequestOptions = Opts.RequestOptions;
 
   export {
