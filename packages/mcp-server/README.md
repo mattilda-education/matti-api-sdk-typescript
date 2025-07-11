@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 Because it's not published yet, clone the repo and build it:
 
 ```sh
-git clone git@github.com:stainless-sdks/mattil-typescript.git
-cd mattil-typescript
+git clone git@github.com:mattilda-education/matti-api-sdk-typescript.git
+cd matti-api-sdk-typescript
 ./scripts/bootstrap
 ./scripts/build
 ```
@@ -41,7 +41,11 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "mattil_api": {
       "command": "node",
-      "args": ["/path/to/local/mattil-typescript/packages/mcp-server", "--client=claude", "--tools=dynamic"],
+      "args": [
+        "/path/to/local/matti-api-sdk-typescript/packages/mcp-server",
+        "--client=claude",
+        "--tools=dynamic"
+      ],
       "env": {
         "MATTIL_API_KEY": "My API Key",
         "MATTIL_ENVIRONMENT": "production"
