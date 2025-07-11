@@ -1,0 +1,4 @@
+configured_endpoints: 64
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/mattilda%2Fmattil-a7093ab951dc96955ac731f928de32a75b001d3b7e0c3e11c0969efa1be1a7a5.yml
+openapi_spec_hash: dbb61f037b6ad83093a4ce6f1fae6e67
+config_hash: bc4c5236225f5c3f731bf65269e7cab7
