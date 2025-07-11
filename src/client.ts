@@ -178,9 +178,8 @@ import {
 import { isEmptyObj } from './internal/utils/values';
 
 const environments = {
-  production: 'https://api.mattilda.school/matti_api/v1',
-  environment_1: 'https://api.mattilda.net/matti_api/v1',
-  environment_2: 'https://api.mattilda.io/matti_api/v1',
+  production: 'https://api.mattilda.io/matti_api/v1',
+  staging: 'https://api.mattilda.net/matti_api/v1',
 };
 type Environment = keyof typeof environments;
 
@@ -194,9 +193,8 @@ export interface ClientOptions {
    * Specifies the environment to use for the API.
    *
    * Each environment maps to a different base URL:
-   * - `production` corresponds to `https://api.mattilda.school/matti_api/v1`
-   * - `environment_1` corresponds to `https://api.mattilda.net/matti_api/v1`
-   * - `environment_2` corresponds to `https://api.mattilda.io/matti_api/v1`
+   * - `production` corresponds to `https://api.mattilda.io/matti_api/v1`
+   * - `staging` corresponds to `https://api.mattilda.net/matti_api/v1`
    */
   environment?: Environment | undefined;
 
@@ -292,7 +290,7 @@ export class Matti {
    *
    * @param {string | undefined} [opts.apiKey=process.env['MATTIL_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
-   * @param {string} [opts.baseURL=process.env['MATTI_BASE_URL'] ?? https://api.mattilda.school/matti_api/v1] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['MATTI_BASE_URL'] ?? https://api.mattilda.io/matti_api/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {MergedRequestInit} [opts.fetchOptions] - Additional `RequestInit` options to be passed to `fetch` calls.
    * @param {Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
