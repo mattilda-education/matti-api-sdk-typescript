@@ -1,10 +1,10 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { APIPromise } from 'mattil/core/api-promise';
+import { APIPromise } from 'matti/core/api-promise';
 
 import util from 'node:util';
-import Mattil from 'mattil';
-import { APIUserAbortError } from 'mattil';
+import Mattil from 'matti';
+import { APIUserAbortError } from 'matti';
 const defaultFetch = fetch;
 
 describe('instantiate client', () => {

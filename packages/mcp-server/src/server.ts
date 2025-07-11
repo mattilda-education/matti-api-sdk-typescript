@@ -4,8 +4,8 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Endpoint, endpoints, HandlerFunction, query } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
-import { ClientOptions } from 'mattil';
-import Mattil from 'mattil';
+import { ClientOptions } from 'matti';
+import Mattil from 'matti';
 import {
   applyCompatibilityTransformations,
   ClientCapabilities,
@@ -19,13 +19,13 @@ import { McpOptions } from './options';
 export { McpOptions } from './options';
 export { ClientType } from './compat';
 export { Filter } from './tools';
-export { ClientOptions } from 'mattil';
+export { ClientOptions } from 'matti';
 export { endpoints } from './tools';
 
 // Create server instance
 export const server = new McpServer(
   {
-    name: 'mattil_api',
+    name: 'matti_api',
     version: '0.0.1-alpha.0',
   },
   {
