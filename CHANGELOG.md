@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2025-07-11)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/mattilda-education/matti-api-sdk-typescript/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** update via SDK Studio ([2a7510a](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/2a7510a8bb44f51707108edd65e4ec4752149cd7))
+
 ## 1.1.0 (2025-07-11)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/mattilda-education/matti-api-sdk-typescript/compare/v1.0.0...v1.1.0)
