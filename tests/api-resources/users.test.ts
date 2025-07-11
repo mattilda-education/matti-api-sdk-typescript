@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Mattil from 'mattil';
+import Mattil from 'matti';
 
 const client = new Mattil({
   apiKey: 'My API Key',

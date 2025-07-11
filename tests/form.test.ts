@@ -1,5 +1,5 @@
-import { multipartFormRequestOptions, createForm } from 'mattil/internal/uploads';
-import { toFile } from 'mattil/core/uploads';
+import { multipartFormRequestOptions, createForm } from 'matti/internal/uploads';
+import { toFile } from 'matti/core/uploads';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "mattil/*": ["dist/src/*"],
-      "mattil": ["dist/src/index.ts"]
+      "matti/*": ["dist/src/*"],
+      "matti": ["dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
