@@ -1,4 +1,4 @@
-import Mattil from 'mattil';
+import Mattil from 'matti';
 import { Endpoint, asTextContentResult, ToolCallResult } from './tools/types';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { z } from 'zod';

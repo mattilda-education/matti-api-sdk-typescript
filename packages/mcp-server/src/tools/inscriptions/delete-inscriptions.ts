@@ -5,7 +5,7 @@ import { asTextContentResult } from 'mattil-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import Mattil from 'mattil';
+import Mattil from 'matti';
 
 export const metadata: Metadata = {
   resource: 'inscriptions',

@@ -1,5 +1,5 @@
 {
-  "name": "mattil",
+  "name": "matti",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Mattil API",
   "author": "Mattil <omar.martinez@mattilda.io>",
@@ -47,8 +47,8 @@
     "typescript": "5.8.3"
   },
   "imports": {
-    "mattil": ".",
-    "mattil/*": "./src/*"
+    "matti": ".",
+    "matti/*": "./src/*"
   },
   "exports": {
     ".": {

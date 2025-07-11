@@ -4,32 +4,17 @@ It is generated with [Stainless](https://www.stainless.com/).
 
 ## Installation
 
-### Building
+### Direct invocation
 
-Because it's not published yet, clone the repo and build it:
-
-```sh
-git clone git@github.com:mattilda-education/matti-api-sdk-typescript.git
-cd matti-api-sdk-typescript
-./scripts/bootstrap
-./scripts/build
-```
-
-### Running
+You can run the MCP Server directly via `npx`:
 
 ```sh
-# set env vars as needed
 export MATTIL_API_KEY="My API Key"
 export MATTIL_ENVIRONMENT="production"
-node ./packages/mcp-server/dist/index.js
+npx -y mattil-mcp@latest
 ```
 
-> [!NOTE]
-> Once this package is [published to npm](https://www.stainless.com/docs/guides/publish), this will become: `npx -y mattil-mcp`
-
 ### Via MCP Client
-
-[Build the project](#building) as mentioned above.
 
 There is a partial list of existing clients at [modelcontextprotocol.io](https://modelcontextprotocol.io/clients). If you already
 have a client, consult their documentation to install the MCP server.
@@ -39,13 +24,9 @@ For clients with a configuration JSON, it might look something like this:
 ```json
 {
   "mcpServers": {
-    "mattil_api": {
-      "command": "node",
-      "args": [
-        "/path/to/local/matti-api-sdk-typescript/packages/mcp-server",
-        "--client=claude",
-        "--tools=dynamic"
-      ],
+    "matti_api": {
+      "command": "npx",
+      "args": ["-y", "mattil-mcp", "--client=claude", "--tools=dynamic"],
       "env": {
         "MATTIL_API_KEY": "My API Key",
         "MATTIL_ENVIRONMENT": "production"

@@ -25,7 +25,7 @@ export default tseslint.config(
         {
           patterns: [
             {
-              regex: '^mattil(/.*)?',
+              regex: '^matti(/.*)?',
               message: 'Use a relative import, not a package import.',
             },
           ],
