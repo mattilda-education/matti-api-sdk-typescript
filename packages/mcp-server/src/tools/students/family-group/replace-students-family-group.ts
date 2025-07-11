@@ -1,0 +1,51 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { maybeFilter } from 'mattil-mcp/filtering';
+import { asTextContentResult } from 'mattil-mcp/tools/types';
+
+import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../../';
+import Mattil from 'mattil';
+
+export const metadata: Metadata = {
+  resource: 'students.family_group',
+  operation: 'write',
+  tags: [],
+  httpMethod: 'put',
+  httpPath: '/students/{student_id}/family_group/{old_user_id}/replace/{new_user_id}',
+};
+
+export const tool: Tool = {
+  name: 'replace_students_family_group',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nReemplazar un usuario por otro en el grupo familiar de un estudiante\n\n# Response Schema\n```json\n{\n  type: 'array',\n  items: {\n    $ref: '#/$defs/user_with_information'\n  },\n  $defs: {\n    user_with_information: {\n      type: 'object',\n      properties: {\n        is_principal: {\n          type: 'boolean'\n        },\n        parent_id: {\n          type: 'string'\n        },\n        reason: {\n          type: 'string'\n        },\n        status: {\n          type: 'string'\n        },\n        user: {\n          type: 'object',\n          properties: {\n            id: {\n              type: 'string'\n            },\n            email: {\n              type: 'string'\n            },\n            full_name: {\n              type: 'string'\n            },\n            phone: {\n              type: 'string'\n            }\n          },\n          required: [            'id',\n            'email',\n            'full_name',\n            'phone'\n          ]\n        }\n      },\n      required: []\n    }\n  }\n}\n```",
+  inputSchema: {
+    type: 'object',
+    properties: {
+      student_id: {
+        type: 'string',
+      },
+      old_user_id: {
+        type: 'string',
+      },
+      new_user_id: {
+        type: 'string',
+      },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
+    },
+  },
+};
+
+export const handler = async (client: Mattil, args: Record<string, unknown> | undefined) => {
+  const { new_user_id, ...body } = args as any;
+  return asTextContentResult(
+    await maybeFilter(args, await client.students.familyGroup.replace(new_user_id, body)),
+  );
+};
+
+export default { metadata, tool, handler };
