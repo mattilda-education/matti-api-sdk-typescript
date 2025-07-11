@@ -24,7 +24,7 @@ import Matti from 'matti';
 
 const client = new Matti({
   apiKey: process.env['MATTIL_API_KEY'], // This is the default and can be omitted
-  environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
+  environment: 'staging', // defaults to 'production'
 });
 
 const schools = await client.schools.list();
@@ -40,7 +40,7 @@ import Matti from 'matti';
 
 const client = new Matti({
   apiKey: process.env['MATTIL_API_KEY'], // This is the default and can be omitted
-  environment: 'environment_1', // or 'production' | 'environment_2'; defaults to 'production'
+  environment: 'staging', // defaults to 'production'
 });
 
 const schools: Matti.SchoolListResponse = await client.schools.list();
