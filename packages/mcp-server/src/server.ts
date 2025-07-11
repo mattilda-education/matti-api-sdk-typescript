@@ -5,7 +5,7 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Endpoint, endpoints, HandlerFunction, query } from './tools';
 import { CallToolRequestSchema, ListToolsRequestSchema, Tool } from '@modelcontextprotocol/sdk/types.js';
 import { ClientOptions } from 'matti';
-import Mattil from 'matti';
+import Matti from 'matti';
 import {
   applyCompatibilityTransformations,
   ClientCapabilities,
@@ -46,7 +46,7 @@ export function initMcpServer(params: {
   endpoints?: { tool: Tool; handler: HandlerFunction }[];
 }) {
   const transformedEndpoints = selectTools(endpoints, params.mcpOptions);
-  const client = new Mattil(params.clientOptions);
+  const client = new Matti(params.clientOptions);
   const capabilities = {
     ...defaultClientCapabilities,
     ...(params.mcpOptions.client ? knownClients[params.mcpOptions.client] : params.mcpOptions.capabilities),
@@ -56,7 +56,7 @@ export function initMcpServer(params: {
 
 export function init(params: {
   server: Server | McpServer;
-  client?: Mattil;
+  client?: Matti;
   endpoints?: { tool: Tool; handler: HandlerFunction }[];
   capabilities?: Partial<ClientCapabilities>;
 }) {
@@ -67,8 +67,8 @@ export function init(params: {
 
   const client =
     params.client ||
-    new Mattil({
-      environment: (readEnv('MATTIL_ENVIRONMENT') || undefined) as any,
+    new Matti({
+      environment: (readEnv('MATTI_ENVIRONMENT') || undefined) as any,
       defaultHeaders: { 'X-Stainless-MCP': 'true' },
     });
 
@@ -121,7 +121,7 @@ export function selectTools(endpoints: Endpoint[], options: McpOptions) {
 export async function executeHandler(
   tool: Tool,
   handler: HandlerFunction,
-  client: Mattil,
+  client: Matti,
   args: Record<string, unknown> | undefined,
   compatibilityOptions?: Partial<ClientCapabilities>,
 ) {
