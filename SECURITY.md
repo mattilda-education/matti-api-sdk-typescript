@@ -20,7 +20,7 @@ or products provided by Matti, please follow the respective company's security r
 
 ### Matti Terms and Policies
 
-Please contact omar.martinez@mattilda.io for any questions or concerns regarding the security of our services.
+Please contact engineering@mattilda.io for any questions or concerns regarding the security of our services.
 
 ---
 
