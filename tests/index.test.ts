@@ -302,13 +302,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['MATTI_BASE_URL'] = ''; // empty
       const client = new Matti({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.mattilda.school/matti_api/v1');
+      expect(client.baseURL).toEqual('https://api.mattilda.io/matti_api/v1');
     });
 
     test('blank env variable', () => {
       process.env['MATTI_BASE_URL'] = '  '; // blank
       const client = new Matti({ apiKey: 'My API Key' });
-      expect(client.baseURL).toEqual('https://api.mattilda.school/matti_api/v1');
+      expect(client.baseURL).toEqual('https://api.mattilda.io/matti_api/v1');
     });
 
     test('env variable with environment', () => {
@@ -321,7 +321,7 @@ describe('instantiate client', () => {
       );
 
       const client = new Matti({ apiKey: 'My API Key', baseURL: null, environment: 'production' });
-      expect(client.baseURL).toEqual('https://api.mattilda.school/matti_api/v1');
+      expect(client.baseURL).toEqual('https://api.mattilda.io/matti_api/v1');
     });
 
     test('in request options', () => {
