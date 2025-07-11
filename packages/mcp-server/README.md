@@ -1,4 +1,4 @@
-# Mattil TypeScript MCP Server
+# Matti TypeScript MCP Server
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -10,8 +10,8 @@ You can run the MCP Server directly via `npx`:
 
 ```sh
 export MATTIL_API_KEY="My API Key"
-export MATTIL_ENVIRONMENT="production"
-npx -y mattil-mcp@latest
+export MATTI_ENVIRONMENT="production"
+npx -y matti-mcp@latest
 ```
 
 ### Via MCP Client
@@ -26,10 +26,10 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "matti_api": {
       "command": "npx",
-      "args": ["-y", "mattil-mcp", "--client=claude", "--tools=dynamic"],
+      "args": ["-y", "matti-mcp", "--client=claude", "--tools=dynamic"],
       "env": {
         "MATTIL_API_KEY": "My API Key",
-        "MATTIL_ENVIRONMENT": "production"
+        "MATTI_ENVIRONMENT": "production"
       }
     }
   }
@@ -132,10 +132,10 @@ over time, you can manually enable or disable certain capabilities:
 
 ```js
 // Import the server, generated endpoints, or the init function
-import { server, endpoints, init } from "mattil-mcp/server";
+import { server, endpoints, init } from "matti-mcp/server";
 
 // import a specific tool
-import updateSchools from "mattil-mcp/tools/schools/update-schools";
+import updateSchools from "matti-mcp/tools/schools/update-schools";
 
 // initialize the server and all endpoints
 init({ server, endpoints });

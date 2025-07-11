@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Mattil from 'matti';
+import Matti from 'matti';
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 
 type TextContentBlock = {
@@ -43,7 +43,7 @@ export type ToolCallResult = {
 };
 
 export type HandlerFunction = (
-  client: Mattil,
+  client: Matti,
   args: Record<string, unknown> | undefined,
 ) => Promise<ToolCallResult>;
 

@@ -1,11 +1,11 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'mattil-mcp/filtering';
-import { asTextContentResult } from 'mattil-mcp/tools/types';
+import { maybeFilter } from 'matti-mcp/filtering';
+import { asTextContentResult } from 'matti-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
-import Mattil from 'matti';
+import Matti from 'matti';
 
 export const metadata: Metadata = {
   resource: 'scholarships',
@@ -68,7 +68,7 @@ export const tool: Tool = {
   },
 };
 
-export const handler = async (client: Mattil, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
   const body = args as any;
   return asTextContentResult(await maybeFilter(args, await client.scholarships.create(body)));
 };

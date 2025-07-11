@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Mattil } from 'matti';
+import { Matti } from 'matti';
 
-const { stringifyQuery } = Mattil.prototype as any;
+const { stringifyQuery } = Matti.prototype as any;
 
 describe(stringifyQuery, () => {
   for (const [input, expected] of [
