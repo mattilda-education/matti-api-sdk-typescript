@@ -9,7 +9,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 You can run the MCP Server directly via `npx`:
 
 ```sh
-export MATTIL_API_KEY="My API Key"
+export MATTI_API_KEY="My API Key"
 export MATTI_ENVIRONMENT="production"
 npx -y matti-mcp@latest
 ```
@@ -28,7 +28,7 @@ For clients with a configuration JSON, it might look something like this:
       "command": "npx",
       "args": ["-y", "matti-mcp", "--client=claude", "--tools=dynamic"],
       "env": {
-        "MATTIL_API_KEY": "My API Key",
+        "MATTI_API_KEY": "My API Key",
         "MATTI_ENVIRONMENT": "production"
       }
     }
