@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'matti-mcp/filtering';
-import { asTextContentResult } from 'matti-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'matti-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Matti from 'matti';
 
 export const metadata: Metadata = {
