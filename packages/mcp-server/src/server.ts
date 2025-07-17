@@ -28,11 +28,7 @@ export const server = new McpServer(
     name: 'matti_api',
     version: '1.1.0',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
