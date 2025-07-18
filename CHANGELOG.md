@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.2.0 (2025-07-18)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/mattilda-education/matti-api-sdk-typescript/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** update via SDK Studio ([2a7510a](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/2a7510a8bb44f51707108edd65e4ec4752149cd7))
+
+
+### Bug Fixes
+
+* **mcp:** include required section for top-level properties and support naming transformations ([c39bc42](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/c39bc424e017fa93f1f6c52e8e44bd29e63a1340))
+* **mcp:** support jq filtering on cloudflare workers ([6ae903a](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/6ae903adb181867ae050576c2d11cac3e273e0fe))
+
+
+### Chores
+
+* **mcp:** formatting ([88e091d](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/88e091db9a1a9213069f2ff6b03d7781d0d07332))
+* **mcp:** rework imports in tools ([73ca94b](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/73ca94bd4efa4a08afe4bc02a61d1f9757d8cb64))
+* **ts:** reorder package.json imports ([36cf95b](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/36cf95b25c5beb78d8d3b267facbcb060214bbdf))
+
+
+### Documentation
+
+* **mcp:** correct instructions for adding to claude web ([7b101f7](https://github.com/mattilda-education/matti-api-sdk-typescript/commit/7b101f7710eed4bba2b3bae500656f9b5db3fb8c))
+
 ## 1.1.0 (2025-07-11)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/mattilda-education/matti-api-sdk-typescript/compare/v1.0.0...v1.1.0)
