@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'update_students',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nActualizar estudiante y programa escolar\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/student',\n  $defs: {\n    student: {\n      allOf: [        {\n          $ref: '#/$defs/base'\n        }\n      ],\n      title: 'invoices.base'\n    },\n    base: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string',\n          description: 'Identificador único del registro'\n        },\n        created_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        },\n        updated_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        }\n      },\n      required: []\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nActualizar estudiante y programa escolar\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/student',\n  $defs: {\n    student: {\n      allOf: [        {\n          $ref: '#/$defs/base'\n        }\n      ],\n      title: 'invoices.base'\n    },\n    base: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string',\n          description: 'Identificador único del registro'\n        },\n        created_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        },\n        updated_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     anyOf: [
@@ -66,6 +66,7 @@ export const tool: Tool = {
             description: 'Números de identificación fiscal',
           },
         },
+        required: ['studentID', 'campusID', 'periodID'],
       },
       {
         type: 'object',
@@ -85,6 +86,7 @@ export const tool: Tool = {
             description: 'ID del periodo que se desea trabajar.',
           },
         },
+        required: ['studentID', 'body', 'campusID', 'periodID'],
       },
       {
         type: 'object',
@@ -104,6 +106,7 @@ export const tool: Tool = {
             description: 'ID del periodo que se desea trabajar.',
           },
         },
+        required: ['studentID', 'body', 'campusID', 'periodID'],
       },
       {
         type: 'object',
@@ -123,6 +126,7 @@ export const tool: Tool = {
             description: 'ID del periodo que se desea trabajar.',
           },
         },
+        required: ['studentID', 'body', 'campusID', 'periodID'],
       },
     ],
     properties: {
