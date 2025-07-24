@@ -26,13 +26,9 @@ export { endpoints } from './tools';
 export const server = new McpServer(
   {
     name: 'matti_api',
-    version: '1.1.0',
+    version: '1.2.0',
   },
-  {
-    capabilities: {
-      tools: {},
-    },
-  },
+  { capabilities: { tools: {} } },
 );
 
 /**
