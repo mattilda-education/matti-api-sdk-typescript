@@ -39,6 +39,9 @@ export const tool: Tool = {
     },
     required: ['student_id', 'old_user_id', 'new_user_id'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

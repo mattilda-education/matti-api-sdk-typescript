@@ -67,6 +67,7 @@ export const tool: Tool = {
     },
     required: ['amount', 'name', 'pay_date', 'program_id', 'status', 'type', 'campusID', 'periodID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

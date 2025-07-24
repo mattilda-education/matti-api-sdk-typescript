@@ -41,6 +41,9 @@ export const tool: Tool = {
     },
     required: ['name', 'zipcode', 'campusID'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

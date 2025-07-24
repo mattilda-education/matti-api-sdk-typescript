@@ -151,6 +151,7 @@ export const tool: Tool = {
     },
     required: ['primary_concept_type', 'program_id', 'student_id', 'campusID', 'periodID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

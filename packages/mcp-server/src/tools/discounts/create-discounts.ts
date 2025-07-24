@@ -101,6 +101,7 @@ export const tool: Tool = {
       'periodID',
     ],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
