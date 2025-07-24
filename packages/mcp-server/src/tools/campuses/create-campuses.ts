@@ -68,6 +68,7 @@ export const tool: Tool = {
     },
     required: ['address', 'name', 'time_zone', 'zipcode', 'campusID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

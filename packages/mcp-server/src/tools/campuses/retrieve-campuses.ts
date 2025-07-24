@@ -36,6 +36,9 @@ export const tool: Tool = {
     },
     required: ['campus_ID', 'campusID'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

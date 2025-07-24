@@ -67,6 +67,7 @@ export const tool: Tool = {
     },
     required: ['education_level', 'end_date', 'name', 'school_level', 'start_date', 'campusID', 'periodID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

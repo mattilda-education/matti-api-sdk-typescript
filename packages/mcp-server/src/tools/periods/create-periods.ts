@@ -114,6 +114,7 @@ export const tool: Tool = {
     },
     required: ['campusID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

@@ -116,6 +116,7 @@ export const tool: Tool = {
     },
     required: ['first_last_name', 'name', 'parent_id', 'programID', 'tin', 'campusID', 'periodID'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {

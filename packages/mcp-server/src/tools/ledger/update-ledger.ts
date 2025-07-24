@@ -155,6 +155,9 @@ export const tool: Tool = {
     },
     required: ['ledger_id', 'primary_concept_type', 'program_id', 'student_id', 'campusID', 'periodID'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
