@@ -45,9 +45,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { new_user_id, ...body } = args as any;
+  const { new_user_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.students.familyGroup.replace(new_user_id, body)),
+    await maybeFilter(jq_filter, await client.students.familyGroup.replace(new_user_id, body)),
   );
 };
 

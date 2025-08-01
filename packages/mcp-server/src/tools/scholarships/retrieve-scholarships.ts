@@ -47,9 +47,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { scholarshipID, ...body } = args as any;
+  const { scholarshipID, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.scholarships.retrieve(scholarshipID, body)),
+    await maybeFilter(jq_filter, await client.scholarships.retrieve(scholarshipID, body)),
   );
 };
 

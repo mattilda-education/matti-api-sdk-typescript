@@ -42,9 +42,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { parent_id, ...body } = args as any;
+  const { parent_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.students.familyGroup.setPrincipal(parent_id, body)),
+    await maybeFilter(jq_filter, await client.students.familyGroup.setPrincipal(parent_id, body)),
   );
 };
 

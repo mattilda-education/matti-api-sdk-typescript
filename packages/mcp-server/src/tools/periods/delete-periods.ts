@@ -43,8 +43,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { period_ID, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.periods.delete(period_ID, body)));
+  const { period_ID, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.periods.delete(period_ID, body)));
 };
 
 export default { metadata, tool, handler };
