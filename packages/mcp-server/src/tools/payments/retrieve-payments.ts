@@ -47,8 +47,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { paymentID, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.payments.retrieve(paymentID, body)));
+  const { paymentID, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.payments.retrieve(paymentID, body)));
 };
 
 export default { metadata, tool, handler };

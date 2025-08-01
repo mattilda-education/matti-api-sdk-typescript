@@ -47,8 +47,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { discountID, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.discounts.retrieve(discountID, body)));
+  const { discountID, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.discounts.retrieve(discountID, body)));
 };
 
 export default { metadata, tool, handler };
