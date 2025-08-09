@@ -22,18 +22,17 @@ export { Filter } from './tools';
 export { ClientOptions } from 'matti';
 export { endpoints } from './tools';
 
-// Create server instance
-export const server = new McpServer(
-  {
-    name: 'matti_api',
-    version: '1.1.0',
-  },
-  {
-    capabilities: {
-      tools: {},
+export const newMcpServer = () =>
+  new McpServer(
+    {
+      name: 'matti_api',
+      version: '1.2.0',
     },
-  },
-);
+    { capabilities: { tools: {}, logging: {} } },
+  );
+
+// Create server instance
+export const server = newMcpServer();
 
 /**
  * Initializes the provided MCP Server with the given tools and handlers.
@@ -65,11 +64,27 @@ export function init(params: {
 
   const endpointMap = Object.fromEntries(providedEndpoints.map((endpoint) => [endpoint.tool.name, endpoint]));
 
+  const logAtLevel =
+    (level: 'debug' | 'info' | 'warning' | 'error') =>
+    (message: string, ...rest: unknown[]) => {
+      void server.sendLoggingMessage({
+        level,
+        data: { message, rest },
+      });
+    };
+  const logger = {
+    debug: logAtLevel('debug'),
+    info: logAtLevel('info'),
+    warn: logAtLevel('warning'),
+    error: logAtLevel('error'),
+  };
+
   const client =
     params.client ||
     new Matti({
       environment: (readEnv('MATTI_ENVIRONMENT') || undefined) as any,
       defaultHeaders: { 'X-Stainless-MCP': 'true' },
+      logger: logger,
     });
 
   server.setRequestHandler(ListToolsRequestSchema, async () => {
@@ -92,7 +107,7 @@ export function init(params: {
 /**
  * Selects the tools to include in the MCP Server based on the provided options.
  */
-export function selectTools(endpoints: Endpoint[], options: McpOptions) {
+export function selectTools(endpoints: Endpoint[], options: McpOptions): Endpoint[] {
   const filteredEndpoints = query(options.filters, endpoints);
 
   let includedTools = filteredEndpoints;
@@ -126,7 +141,7 @@ export async function executeHandler(
   compatibilityOptions?: Partial<ClientCapabilities>,
 ) {
   const options = { ...defaultClientCapabilities, ...compatibilityOptions };
-  if (options.validJson && args) {
+  if (!options.validJson && args) {
     args = parseEmbeddedJSON(args, tool.inputSchema);
   }
   return await handler(client, args || {});
