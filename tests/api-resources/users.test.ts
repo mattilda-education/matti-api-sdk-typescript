@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource users', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.users.create({
       email: 'omar.martinez@mattilda.io',
@@ -30,7 +30,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.users.create({
       email: 'omar.martinez@mattilda.io',
@@ -62,7 +62,7 @@ describe('resource users', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.users.retrieve('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -77,7 +77,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.users.retrieve('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -85,7 +85,7 @@ describe('resource users', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.users.update('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -100,7 +100,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.users.update('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -122,7 +122,7 @@ describe('resource users', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.users.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -137,7 +137,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.users.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -146,7 +146,7 @@ describe('resource users', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.users.delete('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -161,7 +161,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.users.delete('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -169,7 +169,7 @@ describe('resource users', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createPasswordless: only required params', async () => {
     const responsePromise = client.users.createPasswordless('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -183,7 +183,7 @@ describe('resource users', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createPasswordless: required and optional params', async () => {
     const response = await client.users.createPasswordless('2a584234-5839-4a3a-a5be-01a736e0503e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
