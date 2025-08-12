@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource campuses', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.campuses.create({
       address: 'Reforma 606',
@@ -26,7 +26,7 @@ describe('resource campuses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.campuses.create({
       address: 'Reforma 606',
@@ -39,7 +39,7 @@ describe('resource campuses', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.campuses.retrieve('15bf5964-ba9c-4773-8479-6dbce10079ec', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -53,14 +53,14 @@ describe('resource campuses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.campuses.retrieve('15bf5964-ba9c-4773-8479-6dbce10079ec', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.campuses.update('15bf5964-ba9c-4773-8479-6dbce10079ec', {
       name: 'Campus valle',
@@ -75,7 +75,7 @@ describe('resource campuses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.campuses.update('15bf5964-ba9c-4773-8479-6dbce10079ec', {
       name: 'Campus valle',
@@ -85,7 +85,7 @@ describe('resource campuses', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.campuses.list({ campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec' });
     const rawResponse = await responsePromise.asResponse();
@@ -97,7 +97,7 @@ describe('resource campuses', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.campuses.list({ campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec', q: 'q' });
   });

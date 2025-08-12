@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource ledger', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.ledger.create({
       primary_concept_type: 'membership',
@@ -26,7 +26,7 @@ describe('resource ledger', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.ledger.create({
       primary_concept_type: 'membership',
@@ -72,7 +72,7 @@ describe('resource ledger', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.ledger.retrieve('746d02b2-a682-461d-893c-d1fc0b917633', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -87,7 +87,7 @@ describe('resource ledger', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.ledger.retrieve('746d02b2-a682-461d-893c-d1fc0b917633', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -95,7 +95,7 @@ describe('resource ledger', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.ledger.update({
       ledger_id: '0b313f5a-1023-47e4-9b96-82efa61363be',
@@ -114,7 +114,7 @@ describe('resource ledger', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.ledger.update({
       ledger_id: '0b313f5a-1023-47e4-9b96-82efa61363be',
@@ -161,7 +161,7 @@ describe('resource ledger', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.ledger.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -176,7 +176,7 @@ describe('resource ledger', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.ledger.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

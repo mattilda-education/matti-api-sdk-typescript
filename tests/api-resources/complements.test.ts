@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource complements', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.complements.create({
       amount: 1000,
@@ -31,7 +31,7 @@ describe('resource complements', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.complements.create({
       amount: 1000,
@@ -49,7 +49,7 @@ describe('resource complements', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.complements.retrieve('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -64,7 +64,7 @@ describe('resource complements', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.complements.retrieve('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -72,7 +72,7 @@ describe('resource complements', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.complements.update('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       program_id: 'prm_69dc9120-03cc-4737-99b3-88d018804a29',
@@ -88,7 +88,7 @@ describe('resource complements', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.complements.update('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       program_id: 'prm_69dc9120-03cc-4737-99b3-88d018804a29',
@@ -106,7 +106,7 @@ describe('resource complements', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.complements.list({
       program_id: 'program_id',
@@ -122,7 +122,7 @@ describe('resource complements', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.complements.list({
       program_id: 'program_id',
@@ -132,7 +132,7 @@ describe('resource complements', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.complements.delete('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -147,7 +147,7 @@ describe('resource complements', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.complements.delete('cpt_b6f577fa-c2a1-4849-be17-7e730c076fb0', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

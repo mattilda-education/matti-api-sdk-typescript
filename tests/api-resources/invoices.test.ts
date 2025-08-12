@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource invoices', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.invoices.retrieve('9c7f3d05-253c-4cec-a3e9-8e1565de63ca', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -23,7 +23,7 @@ describe('resource invoices', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.invoices.retrieve('9c7f3d05-253c-4cec-a3e9-8e1565de63ca', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -31,7 +31,7 @@ describe('resource invoices', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.invoices.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -46,7 +46,7 @@ describe('resource invoices', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.invoices.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

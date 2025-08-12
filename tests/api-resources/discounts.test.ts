@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource discounts', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.discounts.create({
       amount: 1000,
@@ -32,7 +32,7 @@ describe('resource discounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.discounts.create({
       amount: 1000,
@@ -55,7 +55,7 @@ describe('resource discounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.discounts.retrieve('dsc_84f57a6d-c5b0-4150-bc32-0c26e520e2bd', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -70,7 +70,7 @@ describe('resource discounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.discounts.retrieve('dsc_84f57a6d-c5b0-4150-bc32-0c26e520e2bd', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -78,7 +78,7 @@ describe('resource discounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.discounts.update('dsc_84f57a6d-c5b0-4150-bc32-0c26e520e2bd', {
       amount: 1000,
@@ -101,7 +101,7 @@ describe('resource discounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.discounts.update('dsc_84f57a6d-c5b0-4150-bc32-0c26e520e2bd', {
       amount: 1000,
@@ -123,7 +123,7 @@ describe('resource discounts', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.discounts.list({
       program_id: 'program_id',
@@ -139,7 +139,7 @@ describe('resource discounts', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.discounts.list({
       program_id: 'program_id',

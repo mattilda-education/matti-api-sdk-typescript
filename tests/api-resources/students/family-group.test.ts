@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource familyGroup', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.students.familyGroup.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource familyGroup', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('add: only required params', async () => {
     const responsePromise = client.students.familyGroup.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       is_principal: true,
@@ -35,7 +35,7 @@ describe('resource familyGroup', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('add: required and optional params', async () => {
     const response = await client.students.familyGroup.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       is_principal: true,
@@ -43,7 +43,7 @@ describe('resource familyGroup', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('remove: only required params', async () => {
     const responsePromise = client.students.familyGroup.remove('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -58,7 +58,7 @@ describe('resource familyGroup', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('remove: required and optional params', async () => {
     const response = await client.students.familyGroup.remove('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -66,7 +66,7 @@ describe('resource familyGroup', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('replace: only required params', async () => {
     const responsePromise = client.students.familyGroup.replace('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -81,7 +81,7 @@ describe('resource familyGroup', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('replace: required and optional params', async () => {
     const response = await client.students.familyGroup.replace('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -89,7 +89,7 @@ describe('resource familyGroup', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setPrincipal: only required params', async () => {
     const responsePromise = client.students.familyGroup.setPrincipal('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -103,7 +103,7 @@ describe('resource familyGroup', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setPrincipal: required and optional params', async () => {
     const response = await client.students.familyGroup.setPrincipal('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
