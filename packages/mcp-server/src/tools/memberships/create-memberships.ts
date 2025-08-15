@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_memberships',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nOfrece la lista de todos los Colegiatura disponibles en las escuelas y campus.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/membership',\n  $defs: {\n    membership: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string'\n        },\n        amount: {\n          type: 'integer'\n        },\n        external_id: {\n          type: 'string'\n        },\n        metadata: {\n          type: 'object',\n          description: 'Campo arbitrario de datos de terceros'\n        },\n        name: {\n          type: 'string'\n        },\n        pay_dates: {\n          type: 'array',\n          items: {\n            type: 'string',\n            format: 'date'\n          }\n        },\n        payment_plan: {\n          type: 'integer'\n        },\n        periodicity: {\n          type: 'string'\n        },\n        program_id: {\n          type: 'string'\n        },\n        workday: {\n          type: 'boolean'\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nOfrece la lista de todos los Colegiatura disponibles en las escuelas y campus.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/membership',\n  $defs: {\n    membership: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string'\n        },\n        amount: {\n          type: 'integer'\n        },\n        external_id: {\n          type: 'string'\n        },\n        metadata: {\n          type: 'object',\n          description: 'Campo arbitrario de datos de terceros',\n          additionalProperties: true\n        },\n        name: {\n          type: 'string'\n        },\n        pay_dates: {\n          type: 'array',\n          items: {\n            type: 'string',\n            format: 'date'\n          }\n        },\n        payment_plan: {\n          type: 'integer'\n        },\n        periodicity: {\n          type: 'string'\n        },\n        program_id: {\n          type: 'string'\n        },\n        workday: {\n          type: 'boolean'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -59,6 +59,7 @@ export const tool: Tool = {
       metadata: {
         type: 'object',
         description: 'Campo arbitrario de datos de terceros',
+        additionalProperties: true,
       },
       jq_filter: {
         type: 'string',

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'delete_students',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nEliminar un Estudiante\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    campus_id: {\n      type: 'string',\n      description: 'Identificador del campus'\n    },\n    deleted_invoices: {\n      type: 'object',\n      description: 'Lista de conceptos eliminados'\n    },\n    student_id: {\n      type: 'string',\n      description: 'Identificador del estudiante'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nEliminar un Estudiante\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    campus_id: {\n      type: 'string',\n      description: 'Identificador del campus'\n    },\n    deleted_invoices: {\n      type: 'object',\n      description: 'Lista de conceptos eliminados',\n      additionalProperties: true\n    },\n    student_id: {\n      type: 'string',\n      description: 'Identificador del estudiante'\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
