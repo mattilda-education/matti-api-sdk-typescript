@@ -71,6 +71,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'on_inscription', 'on_memberships', 'pay_date', 'pay_type'],
@@ -95,6 +96,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'pay_date'],
@@ -102,6 +104,7 @@ export const tool: Tool = {
       },
       metadata: {
         type: 'object',
+        additionalProperties: true,
       },
       primary_concept_id: {
         type: 'string',
@@ -137,6 +140,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'on_inscription', 'on_memberships', 'pay_date', 'pay_type'],

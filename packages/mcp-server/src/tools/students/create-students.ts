@@ -90,6 +90,7 @@ export const tool: Tool = {
       metadata: {
         type: 'object',
         description: 'Campo arbitrario de datos de terceros',
+        additionalProperties: true,
       },
       preloaded: {
         type: 'boolean',

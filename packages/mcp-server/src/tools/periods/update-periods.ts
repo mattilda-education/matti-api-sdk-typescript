@@ -102,6 +102,7 @@ export const tool: Tool = {
           },
           properties: {
             type: 'object',
+            additionalProperties: true,
           },
           start_date: {
             type: 'string',

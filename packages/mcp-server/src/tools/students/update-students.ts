@@ -77,6 +77,7 @@ export const tool: Tool = {
           },
           body: {
             type: 'object',
+            additionalProperties: true,
           },
           campusID: {
             type: 'string',
@@ -97,6 +98,7 @@ export const tool: Tool = {
           },
           body: {
             type: 'object',
+            additionalProperties: true,
           },
           campusID: {
             type: 'string',
@@ -117,6 +119,7 @@ export const tool: Tool = {
           },
           body: {
             type: 'object',
+            additionalProperties: true,
           },
           campusID: {
             type: 'string',
