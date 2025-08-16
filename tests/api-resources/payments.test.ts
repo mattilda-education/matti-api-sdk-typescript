@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource payments', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.payments.create({
       amount: 100.2,
@@ -29,7 +29,7 @@ describe('resource payments', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.payments.create({
       amount: 100.2,
@@ -45,7 +45,7 @@ describe('resource payments', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.payments.retrieve('fc159d85-a404-4445-9161-4b3bf352b314', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -60,7 +60,7 @@ describe('resource payments', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.payments.retrieve('fc159d85-a404-4445-9161-4b3bf352b314', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -68,7 +68,7 @@ describe('resource payments', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.payments.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -83,7 +83,7 @@ describe('resource payments', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.payments.list({
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

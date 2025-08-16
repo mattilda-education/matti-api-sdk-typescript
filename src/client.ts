@@ -185,7 +185,7 @@ type Environment = keyof typeof environments;
 
 export interface ClientOptions {
   /**
-   * Defaults to process.env['MATTIL_API_KEY'].
+   * Defaults to process.env['MATTI_API_KEY'].
    */
   apiKey?: string | undefined;
 
@@ -288,7 +288,7 @@ export class Matti {
   /**
    * API Client for interfacing with the Matti API.
    *
-   * @param {string | undefined} [opts.apiKey=process.env['MATTIL_API_KEY'] ?? undefined]
+   * @param {string | undefined} [opts.apiKey=process.env['MATTI_API_KEY'] ?? undefined]
    * @param {Environment} [opts.environment=production] - Specifies the environment URL to use for the API.
    * @param {string} [opts.baseURL=process.env['MATTI_BASE_URL'] ?? https://api.mattilda.io/matti_api/v1] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
@@ -300,12 +300,12 @@ export class Matti {
    */
   constructor({
     baseURL = readEnv('MATTI_BASE_URL'),
-    apiKey = readEnv('MATTIL_API_KEY'),
+    apiKey = readEnv('MATTI_API_KEY'),
     ...opts
   }: ClientOptions = {}) {
     if (apiKey === undefined) {
       throw new Errors.MattiError(
-        "The MATTIL_API_KEY environment variable is missing or empty; either provide it, or instantiate the Matti client with an apiKey option, like new Matti({ apiKey: 'My API Key' }).",
+        "The MATTI_API_KEY environment variable is missing or empty; either provide it, or instantiate the Matti client with an apiKey option, like new Matti({ apiKey: 'My API Key' }).",
       );
     }
 
@@ -900,6 +900,7 @@ export class Matti {
   users: API.Users = new API.Users(this);
   periods: API.Periods = new API.Periods(this);
 }
+
 Matti.Schools = Schools;
 Matti.Campuses = Campuses;
 Matti.Programs = Programs;
@@ -914,6 +915,7 @@ Matti.Ledger = Ledger;
 Matti.Students = Students;
 Matti.Users = Users;
 Matti.Periods = Periods;
+
 export declare namespace Matti {
   export type RequestOptions = Opts.RequestOptions;
 
