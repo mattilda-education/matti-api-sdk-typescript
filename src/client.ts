@@ -900,6 +900,7 @@ export class Matti {
   users: API.Users = new API.Users(this);
   periods: API.Periods = new API.Periods(this);
 }
+
 Matti.Schools = Schools;
 Matti.Campuses = Campuses;
 Matti.Programs = Programs;
@@ -914,6 +915,7 @@ Matti.Ledger = Ledger;
 Matti.Students = Students;
 Matti.Users = Users;
 Matti.Periods = Periods;
+
 export declare namespace Matti {
   export type RequestOptions = Opts.RequestOptions;
 
