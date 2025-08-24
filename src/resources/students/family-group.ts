@@ -11,7 +11,7 @@ export class FamilyGroup extends APIResource {
    *
    * @example
    * ```ts
-   * const userWithInformations =
+   * const userWithInformation =
    *   await client.students.familyGroup.list(
    *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
    *   );
@@ -26,7 +26,7 @@ export class FamilyGroup extends APIResource {
    *
    * @example
    * ```ts
-   * const userWithInformations =
+   * const userWithInformation =
    *   await client.students.familyGroup.add(
    *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
    *     {
@@ -49,7 +49,7 @@ export class FamilyGroup extends APIResource {
    *
    * @example
    * ```ts
-   * const userWithInformations =
+   * const userWithInformation =
    *   await client.students.familyGroup.remove(
    *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
    *     {
@@ -73,7 +73,7 @@ export class FamilyGroup extends APIResource {
    *
    * @example
    * ```ts
-   * const userWithInformations =
+   * const userWithInformation =
    *   await client.students.familyGroup.replace(
    *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
    *     {
@@ -100,7 +100,7 @@ export class FamilyGroup extends APIResource {
    *
    * @example
    * ```ts
-   * const userWithInformations =
+   * const userWithInformation =
    *   await client.students.familyGroup.setPrincipal(
    *     '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
    *     { student_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },
