@@ -1,0 +1,42 @@
+{
+  "dxt_version": "0.1",
+  "name": "matti-mcp",
+  "version": "1.1.0",
+  "description": "The official MCP Server for the Matti API",
+  "author": {
+    "name": "Matti",
+    "email": "engineering@mattilda.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattilda-education/matti-api-sdk-typescript.git"
+  },
+  "homepage": "https://github.com/mattilda-education/matti-api-sdk-typescript/tree/main/packages/mcp-server#readme",
+  "documentation": "https://developer.mattilda.io/",
+  "server": {
+    "type": "node",
+    "entry_point": "${__dirname}/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/index.js"],
+      "env": {
+        "MATTI_API_KEY": "${user_config.MATTI_API_KEY}"
+      }
+    }
+  },
+  "user_config": {
+    "MATTI_API_KEY": {
+      "title": "api_key",
+      "description": "",
+      "required": true,
+      "type": "string"
+    }
+  },
+  "tools_generated": true,
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "keywords": ["api"]
+}
