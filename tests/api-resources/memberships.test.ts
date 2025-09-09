@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource memberships', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.memberships.create({
       amount: 1000,
@@ -30,7 +30,7 @@ describe('resource memberships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.memberships.create({
       amount: 1000,
@@ -47,7 +47,7 @@ describe('resource memberships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.memberships.retrieve('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -62,7 +62,7 @@ describe('resource memberships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.memberships.retrieve('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -70,7 +70,7 @@ describe('resource memberships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.memberships.update('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -85,7 +85,7 @@ describe('resource memberships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.memberships.update('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -102,7 +102,7 @@ describe('resource memberships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.memberships.list({
       program_id: 'program_id',
@@ -118,7 +118,7 @@ describe('resource memberships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.memberships.list({
       program_id: 'program_id',
@@ -128,7 +128,7 @@ describe('resource memberships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.memberships.delete('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -143,7 +143,7 @@ describe('resource memberships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.memberships.delete('mbs_4811e525-c590-45f7-96fa-e178a5a3ef3e', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

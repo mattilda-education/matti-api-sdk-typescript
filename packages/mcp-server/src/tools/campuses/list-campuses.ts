@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'matti-mcp/filtering';
-import { asTextContentResult } from 'matti-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'matti-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Matti from 'matti';
 
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_campuses',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nProporciona acceso a la información de todos los campus asociados a las escuelas.\n\n# Response Schema\n```json\n{\n  type: 'array',\n  items: {\n    $ref: '#/$defs/campus'\n  },\n  $defs: {\n    campus: {\n      type: 'object',\n      properties: {\n        campusID: {\n          type: 'integer',\n          description: 'Identificador del Campus'\n        },\n        example: {\n          type: 'object'\n        },\n        external_id: {\n          type: 'string',\n          description: 'Campo arbitrario de una llave primaria de un sistema externo'\n        },\n        metadata: {\n          type: 'object',\n          description: 'Campo arbitrario de datos de terceros'\n        },\n        name: {\n          type: 'string',\n          description: 'Nombre de campus'\n        }\n      },\n      required: []\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nProporciona acceso a la información de todos los campus asociados a las escuelas.\n\n# Response Schema\n```json\n{\n  type: 'array',\n  items: {\n    $ref: '#/$defs/campus'\n  },\n  $defs: {\n    campus: {\n      type: 'object',\n      properties: {\n        campusID: {\n          type: 'integer',\n          description: 'Identificador del Campus'\n        },\n        example: {\n          type: 'object',\n          additionalProperties: true\n        },\n        external_id: {\n          type: 'string',\n          description: 'Campo arbitrario de una llave primaria de un sistema externo'\n        },\n        metadata: {\n          type: 'object',\n          description: 'Campo arbitrario de datos de terceros',\n          additionalProperties: true\n        },\n        name: {\n          type: 'string',\n          description: 'Nombre de campus'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -37,12 +36,16 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['campusID'],
+  },
+  annotations: {
+    readOnlyHint: true,
   },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.campuses.list(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.campuses.list(body)));
 };
 
 export default { metadata, tool, handler };

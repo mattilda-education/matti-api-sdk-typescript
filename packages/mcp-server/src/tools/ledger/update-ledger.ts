@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'matti-mcp/filtering';
-import { asTextContentResult } from 'matti-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'matti-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Matti from 'matti';
 
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'update_ledger',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nActualización de un Concepto\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/ledger_entries',\n  $defs: {\n    ledger_entries: {\n      allOf: [        {\n          $ref: '#/$defs/base'\n        }\n      ],\n      title: 'invoices.base'\n    },\n    base: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string',\n          description: 'Identificador único del registro'\n        },\n        created_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        },\n        updated_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        }\n      },\n      required: []\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nActualización de un Concepto\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/ledger_entries',\n  $defs: {\n    ledger_entries: {\n      allOf: [        {\n          $ref: '#/$defs/base'\n        }\n      ],\n      title: 'invoices.base'\n    },\n    base: {\n      type: 'object',\n      properties: {\n        id: {\n          type: 'string',\n          description: 'Identificador único del registro'\n        },\n        created_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        },\n        updated_at: {\n          type: 'string',\n          description: 'Fecha y hora de creacion del registro',\n          format: 'date-time'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -76,6 +75,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'on_inscription', 'on_memberships', 'pay_date', 'pay_type'],
@@ -100,6 +100,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'pay_date'],
@@ -107,6 +108,7 @@ export const tool: Tool = {
       },
       metadata: {
         type: 'object',
+        additionalProperties: true,
       },
       primary_concept_id: {
         type: 'string',
@@ -142,6 +144,7 @@ export const tool: Tool = {
             },
             metadata: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           required: ['amount', 'on_inscription', 'on_memberships', 'pay_date', 'pay_type'],
@@ -154,12 +157,16 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['ledger_id', 'primary_concept_type', 'program_id', 'student_id', 'campusID', 'periodID'],
+  },
+  annotations: {
+    idempotentHint: true,
   },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const body = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.ledger.update(body)));
+  const { jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.ledger.update(body)));
 };
 
 export default { metadata, tool, handler };

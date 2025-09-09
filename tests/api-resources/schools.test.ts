@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource schools', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.schools.update({
       name: 'ULA',
@@ -24,7 +24,7 @@ describe('resource schools', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.schools.update({
       name: 'ULA',
@@ -33,7 +33,7 @@ describe('resource schools', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.schools.list();
     const rawResponse = await responsePromise.asResponse();

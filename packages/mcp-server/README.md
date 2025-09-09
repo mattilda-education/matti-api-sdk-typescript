@@ -9,7 +9,7 @@ It is generated with [Stainless](https://www.stainless.com/).
 You can run the MCP Server directly via `npx`:
 
 ```sh
-export MATTIL_API_KEY="My API Key"
+export MATTI_API_KEY="My API Key"
 export MATTI_ENVIRONMENT="production"
 npx -y matti-mcp@latest
 ```
@@ -28,7 +28,7 @@ For clients with a configuration JSON, it might look something like this:
       "command": "npx",
       "args": ["-y", "matti-mcp", "--client=claude", "--tools=dynamic"],
       "env": {
-        "MATTIL_API_KEY": "My API Key",
+        "MATTI_API_KEY": "My API Key",
         "MATTI_ENVIRONMENT": "production"
       }
     }
@@ -126,6 +126,43 @@ over time, you can manually enable or disable certain capabilities:
 
 ```bash
 --resource=cards,accounts --operation=read --tag=kyc --no-tool=create_cards
+```
+
+## Running remotely
+
+Launching the client with `--transport=http` launches the server as a remote server using Streamable HTTP transport. The `--port` setting can choose the port it will run on, and the `--socket` setting allows it to run on a Unix socket.
+
+Authorization can be provided via the following headers:
+| Header | Equivalent client option | Security scheme |
+| --------- | ------------------------ | --------------- |
+| `api_key` | `apiKey` | api_key |
+
+A configuration JSON for this server might look like this, assuming the server is hosted at `http://localhost:3000`:
+
+```json
+{
+  "mcpServers": {
+    "matti_api": {
+      "url": "http://localhost:3000",
+      "headers": {
+        "api_key": "My API Key"
+      }
+    }
+  }
+}
+```
+
+The command-line arguments for filtering tools and specifying clients can also be used as query parameters in the URL.
+For example, to exclude specific tools while including others, use the URL:
+
+```
+http://localhost:3000?resource=cards&resource=accounts&no_tool=create_cards
+```
+
+Or, to configure for the Cursor client, with a custom max tool name length, use the URL:
+
+```
+http://localhost:3000?client=cursor&capability=tool-name-length%3D40
 ```
 
 ## Importing the tools and server individually

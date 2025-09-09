@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource inscriptions', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.inscriptions.create({
       amount: 1000,
@@ -29,7 +29,7 @@ describe('resource inscriptions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.inscriptions.create({
       amount: 1000,
@@ -45,7 +45,7 @@ describe('resource inscriptions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.inscriptions.retrieve('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -60,7 +60,7 @@ describe('resource inscriptions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.inscriptions.retrieve('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -68,7 +68,7 @@ describe('resource inscriptions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.inscriptions.update('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -83,7 +83,7 @@ describe('resource inscriptions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.inscriptions.update('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -98,7 +98,7 @@ describe('resource inscriptions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.inscriptions.list({
       program_id: 'program_id',
@@ -114,7 +114,7 @@ describe('resource inscriptions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.inscriptions.list({
       program_id: 'program_id',
@@ -124,7 +124,7 @@ describe('resource inscriptions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.inscriptions.delete('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -139,7 +139,7 @@ describe('resource inscriptions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.inscriptions.delete('inc_4dfbd534-0d6c-489e-9557-04dd60dce61d', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

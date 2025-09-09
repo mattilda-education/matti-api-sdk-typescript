@@ -8,7 +8,7 @@ const client = new Matti({
 });
 
 describe('resource scholarships', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.scholarships.create({
       amount: 1000,
@@ -30,7 +30,7 @@ describe('resource scholarships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.scholarships.create({
       amount: 1000,
@@ -47,7 +47,7 @@ describe('resource scholarships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.scholarships.retrieve('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -62,7 +62,7 @@ describe('resource scholarships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.scholarships.retrieve('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -70,7 +70,7 @@ describe('resource scholarships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.scholarships.update('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -85,7 +85,7 @@ describe('resource scholarships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.scholarships.update('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -102,7 +102,7 @@ describe('resource scholarships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.scholarships.list({
       program_id: 'program_id',
@@ -118,7 +118,7 @@ describe('resource scholarships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.scholarships.list({
       program_id: 'program_id',
@@ -128,7 +128,7 @@ describe('resource scholarships', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.scholarships.delete('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',
@@ -143,7 +143,7 @@ describe('resource scholarships', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.scholarships.delete('scs_349d3bff-cfae-4cc6-9835-e3558a64eb03', {
       campusID: '15bf5964-ba9c-4773-8479-6dbce10079ec',

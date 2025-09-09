@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Matti REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found on [developer.mattilda.io](https://developer.mattilda.io/reference/get_schools). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found on [developer.mattilda.io](https://developer.mattilda.io/). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainless.com/).
 
@@ -23,7 +23,7 @@ The full API of this library can be found in [api.md](api.md).
 import Matti from 'matti';
 
 const client = new Matti({
-  apiKey: process.env['MATTIL_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['MATTI_API_KEY'], // This is the default and can be omitted
   environment: 'staging', // defaults to 'production'
 });
 
@@ -39,7 +39,7 @@ This library includes TypeScript definitions for all request params and response
 import Matti from 'matti';
 
 const client = new Matti({
-  apiKey: process.env['MATTIL_API_KEY'], // This is the default and can be omitted
+  apiKey: process.env['MATTI_API_KEY'], // This is the default and can be omitted
   environment: 'staging', // defaults to 'production'
 });
 

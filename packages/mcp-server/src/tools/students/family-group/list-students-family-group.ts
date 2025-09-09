@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'matti-mcp/filtering';
-import { asTextContentResult } from 'matti-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'matti-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../';
 import Matti from 'matti';
 
 export const metadata: Metadata = {
@@ -18,7 +17,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_students_family_group',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nListar el grupo familiar de un estudiante\n\n# Response Schema\n```json\n{\n  type: 'array',\n  items: {\n    $ref: '#/$defs/user_with_information'\n  },\n  $defs: {\n    user_with_information: {\n      type: 'object',\n      properties: {\n        is_principal: {\n          type: 'boolean'\n        },\n        parent_id: {\n          type: 'string'\n        },\n        reason: {\n          type: 'string'\n        },\n        status: {\n          type: 'string'\n        },\n        user: {\n          type: 'object',\n          properties: {\n            id: {\n              type: 'string'\n            },\n            email: {\n              type: 'string'\n            },\n            full_name: {\n              type: 'string'\n            },\n            phone: {\n              type: 'string'\n            }\n          },\n          required: [            'id',\n            'email',\n            'full_name',\n            'phone'\n          ]\n        }\n      },\n      required: []\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nListar el grupo familiar de un estudiante\n\n# Response Schema\n```json\n{\n  type: 'array',\n  items: {\n    $ref: '#/$defs/user_with_information'\n  },\n  $defs: {\n    user_with_information: {\n      type: 'object',\n      properties: {\n        is_principal: {\n          type: 'boolean'\n        },\n        parent_id: {\n          type: 'string'\n        },\n        reason: {\n          type: 'string'\n        },\n        status: {\n          type: 'string'\n        },\n        user: {\n          type: 'object',\n          properties: {\n            id: {\n              type: 'string'\n            },\n            email: {\n              type: 'string'\n            },\n            full_name: {\n              type: 'string'\n            },\n            phone: {\n              type: 'string'\n            }\n          },\n          required: [            'id',\n            'email',\n            'full_name',\n            'phone'\n          ]\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -32,12 +31,18 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['student_id'],
+  },
+  annotations: {
+    readOnlyHint: true,
   },
 };
 
 export const handler = async (client: Matti, args: Record<string, unknown> | undefined) => {
-  const { student_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.students.familyGroup.list(student_id)));
+  const { student_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(
+    await maybeFilter(jq_filter, await client.students.familyGroup.list(student_id)),
+  );
 };
 
 export default { metadata, tool, handler };
